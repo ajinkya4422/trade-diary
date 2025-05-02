@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
-}
+/* Sidebar.css or App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar {
+  width: 16rem;
+  height: 100vh;
+  background: #2d3748;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar.open {
+  left: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+.logo-primary {
+  color: #7f9cf5;
+}
+.logo-secondary {
+  color: #68d391;
+}
+.nav-links {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: white;
+  text-align: left;
+}
+.nav-item.active, .nav-item:hover {
+  background-color: #4a5568;
+}
+.profile {
+  padding: 1.5rem;
+  border-top: 1px solid #4a5568;
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  background-color: #7f9cf5;
+  color: white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Main Layout */
+.layout {
+  display: flex;
+}
+.main-content {
+  margin-left: 16rem;
+  padding: 1.5rem;
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+.transform {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.transition-all {
+  transition-property: all;
+}
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+}
+.view-toggle button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid gray;
+  background: white;
+}
+.view-toggle .active {
+  background-color: #68d391;
   color: white;
+  border-color: #68d391;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* Inputs and Buttons */
+.input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.375rem;
+  background: white;
+}
+.btn {
+  padding: 0.5rem 0.75rem;
+  background-color: #68d391;
+  color: white;
+  border-radius: 0.375rem;
+}
+.select {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.375rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Cards */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.good {
+  color: #68d391;
+}
+.bad {
+  color: #f56565;
+}
+.unknown {
+  color: #718096;
 }
