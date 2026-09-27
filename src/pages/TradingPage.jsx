@@ -142,20 +142,22 @@ const TradeDiaryPage = () => {
             {['My Rule Book', 'Add Trades', 'Manage Trades', 'Open Positions', 'Dashboard', 'Trade Diary', 
               'Chart-Maze Screener', 'Help or Feedback'].map((item) => (
               <li key={item} className="group">
-                <a href="#" className="flex items-center p-2 rounded transition-colors" 
+                <button
+                  type="button"
+                  className="flex w-full items-center p-2 rounded transition-colors text-left"
                   style={{
                     color: 'var(--font-grey)',
-                    backgroundColor: item === 'Trade Diary' ? 'var(--brand-primary)' : 'transparent',
-                    '&:hover': { backgroundColor: 'var(--bg-grey)' }
-                  }}>
-                  <span className="material-symbols-rounded mr-3" 
+                    backgroundColor: item === 'Trade Diary' ? 'var(--brand-primary)' : 'transparent'
+                  }}
+                >
+                  <span className="material-symbols-rounded mr-3"
                     style={{ color: item === 'Trade Diary' ? '#fff' : 'var(--icon)' }}>
                     {getIconForMenuItem(item)}
                   </span>
                   <span style={{ color: item === 'Trade Diary' ? '#fff' : 'var(--font-grey)' }}>
                     {item}
                   </span>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -936,7 +938,6 @@ const AddTradeForm = ({ onSubmit, onCancel }) => {
       </div>
     </form>
   );
-};
 };
 
 // Helper function for menu icons

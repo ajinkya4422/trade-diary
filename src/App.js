@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css'
-import TradeDiaryPage from './components/TradeDiaryPage';
+import './index.css';
 import TradingPage from './pages/TradingPage';
 
 function App() {
